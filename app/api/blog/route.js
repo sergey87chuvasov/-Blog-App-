@@ -9,12 +9,16 @@ const LoadDB = async () => {
 
 LoadDB();
 
+// api endpoint to get all blogs
 export async function GET(request) {
   // console.log('Blog GET Hit');
 
-  return NextResponse.json({ msg: 'API Working' });
+  const blogs = await BlogModel.find({});
+
+  return NextResponse.json({ blogs });
 }
 
+//api endpoint for upload blogs
 export async function POST(request) {
   const formData = await request.formData();
   const timestamp = Date.now();
