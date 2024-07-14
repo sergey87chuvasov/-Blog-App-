@@ -11,11 +11,15 @@ LoadDB();
 
 // api endpoint to get all blogs
 export async function GET(request) {
-  // console.log('Blog GET Hit');
+  const blogId = request.nextUrl.searchParams.get('id');
 
-  const blogs = await BlogModel.find({});
-
-  return NextResponse.json({ blogs });
+  if (blogId) {
+    const blog = await BlogModel.findById(blogId);
+    return NextResponse.json(blog);
+  } else {
+    const blogs = await BlogModel.find({});
+    return NextResponse.json({ blogs });
+  }
 }
 
 //api endpoint for upload blogs
@@ -31,8 +35,6 @@ export async function POST(request) {
 
   await writeFile(path, buffer);
   const imgUrl = `/${timestamp}_${image.name}`;
-
-  // console.log(imgUrl);
 
   const blogData = {
     title: `${formData.get('title')}`,
