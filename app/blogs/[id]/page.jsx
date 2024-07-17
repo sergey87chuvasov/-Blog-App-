@@ -64,53 +64,10 @@ const page = ({ params }) => {
           height={720}
           alt='img pic'
         />
-        <h1 className='my-8 text-[26px] font-semibold'>Introduction:</h1>
-        <p>{data.description}</p>
-        <h3 className='my-5 text-[18px] font-semibold'>
-          Step 1: Self-Reflection and Goal Setting
-        </h3>
-        <p className='my-3'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-          reiciendis maiores libero, ex quos officia pariatur vitae laborum fuga
-          iste similique atque adipisci.
-        </p>
-        <p className='my-3'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-          reiciendis maiores libero, ex quos officia pariatur vitae laborum fuga
-          iste similique atque adipisci.
-        </p>
-        <h3 className='my-5 text-[18px] font-semibold'>
-          Step 2: Self-Reflection and Goal Setting
-        </h3>
-        <p className='my-3'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-          reiciendis maiores libero, ex quos officia pariatur vitae laborum fuga
-          iste similique atque adipisci.
-        </p>
-        <p className='my-3'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-          reiciendis maiores libero, ex quos officia pariatur vitae laborum fuga
-          iste similique atque adipisci.
-        </p>
-        <h3 className='my-5 text-[18px] font-semibold'>
-          Step 3: Self-Reflection and Goal Setting
-        </h3>
-        <p className='my-3'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-          reiciendis maiores libero, ex quos officia pariatur vitae laborum fuga
-          iste similique atque adipisci.
-        </p>
-        <p className='my-3'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-          reiciendis maiores libero, ex quos officia pariatur vitae laborum fuga
-          iste similique atque adipisci.
-        </p>
-        <h3 className='my-5 text-[18px] font-semibold'>Conclusion:</h3>
-        <p className='my-3'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-          reiciendis maiores libero, ex quos officia pariatur vitae laborum fuga
-          iste similique atque adipisci.
-        </p>
+        <div
+          className='blog-content'
+          dangerouslySetInnerHTML={{ __html: data.description }}
+        ></div>
         <div className='my-24'>
           <p className='text-black font-semibold my-4'>
             Share this article on social media
